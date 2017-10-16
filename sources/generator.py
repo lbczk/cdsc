@@ -45,7 +45,11 @@ class BSONIterator(Iterator):
                 item_data = self.file.read(offset_row["length"])
 
             # Grab the image from the product.
-            item = bson.BSON(item_data).decode()
+            try:
+                item = bson.BSON(item_data).decode()
+            except:
+                print("devil drinks coke")
+                item = bson.BSON.decode(item_data)
             img_idx = image_row["img_idx"]
             bson_img = item["imgs"][img_idx]["picture"]
 
@@ -71,4 +75,3 @@ class BSONIterator(Iterator):
             if self.keep_indices:
                 self.indices += list(index_array)
         return self._get_batches_of_transformed_samples(index_array)
-

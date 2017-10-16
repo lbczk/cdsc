@@ -51,7 +51,7 @@ class Reader():
             self.test_offsets_df = read_bson(self.test_bson_path, num_records=self.num_test_products, with_categories=False)
             self.train_offsets_df.to_csv(os.path.join(self.csv_dir, self.dataset_code, "train_offsets.csv"))
             self.test_offsets_df.to_csv(os.path.join(self.csv_dir, self.dataset_code, "test_offsets.csv"))
-            print "Total number of images in train {}".format(self.train_offsets_df["num_imgs"].sum())
+            print("Total number of images in train {}".format(self.train_offsets_df["num_imgs"].sum()))
 
     def make_val_set(self, split_percentage=0.2, drop_percentage=0.):
         if self.never_read:

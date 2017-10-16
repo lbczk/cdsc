@@ -11,7 +11,7 @@ train_bson_file = open(r.train_bson_path, "rb")
 
 # num_classes = len(train_offsets_df["category_id"].unique())
 num_classes = 5270
-print "Total number of categories in train {}".format(num_classes)
+print("Total number of categories in train {}".format(num_classes))
 
 
 num_train_images = len(r.train_images_df)

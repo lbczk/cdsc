@@ -58,3 +58,12 @@ arti_product_id = range(60)
 arti_idx2cat = {i: 1000 + i for i in range(10)}
 pp = PostProcessing(arti_preds, arti_num_imgs, arti_product_id, idx2cat=arti_idx2cat)
 pp.agreg(0)
+
+def foo(n):
+    try:
+        print(1/0)
+        return 1
+    except:
+        print("ha")
+        return n+1
+        
